@@ -14,8 +14,10 @@ gem "importmap-rails"
 gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+
+gem "devise", "~> 4.9"
+
+gem "tailwindcss-rails", "~> 3.0"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -49,9 +51,21 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "rubocop", "~> 1.69", require: false
+  gem "rubocop-rails", "~> 2.28", require: false
+  gem "rubocop-rspec", "~> 3.3", require: false
+  gem "rubocop-performance", "~> 1.24", require: false
+
+  gem "factory_bot_rails", "~> 6.4", ">= 6.4.4"
+  gem "faker"
+  gem "rspec-rails", "~> 7.1", ">= 7.1.1"
+  gem "shoulda-matchers", "~> 6.5"
+  gem "simplecov", "~> 0.21.2", require: false
+  gem "ruby-lsp"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "bullet", "~> 8.0", ">= 8.0.8"
 end
