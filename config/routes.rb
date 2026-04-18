@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   devise_for :users
+
+  namespace :store do
+    root "home#index"
+  end
 end

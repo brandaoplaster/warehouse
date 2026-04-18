@@ -1,0 +1,22 @@
+<div class="border rounded-lg shadow-sm overflow-hidden w-full flex flex-col">
+  <div class="aspect-square bg-gray-100">
+    <img src="https://via.placeholder.com/300"
+      class="w-full h-full object-cover block" />
+  </div>
+
+  <div class="p-4 flex flex-col flex-1 justify-between">
+    <div>
+      <h3 class="font-medium text-sm mb-2">
+        <%= product.name %>
+      </h3>
+
+      <p class="text-lg font-semibold">
+        $<%= product.price %>
+      </p>
+    </div>
+
+    <%= link_to "View details", "#",
+      class: "mt-4 text-sm text-blue-600 hover:underline" %>
+  </div>
+
+</div>
