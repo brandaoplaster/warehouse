@@ -1,7 +1,15 @@
 <div class="border rounded-lg shadow-sm overflow-hidden w-full flex flex-col">
   <div class="aspect-square bg-gray-100">
-    <img src="https://via.placeholder.com/300"
-      class="w-full h-full object-cover block" />
+    <% if product.image.attached? %>
+      <%= image_tag product.image.variant(
+            resize_to_limit: [300, 300],
+            saver: { quality: 70 }
+          ),
+          alt: product.name,
+          class: "w-full h-full object-cover block",
+          loading: "lazy",
+          decoding: "async" %>
+    <% end %>
   </div>
 
   <div class="p-4 flex flex-col flex-1 justify-between">
