@@ -11,6 +11,7 @@ RUN apt-get update && \
     build-essential \
     libpq-dev \
     libyaml-dev \
+    libvips \
     imagemagick \
     tzdata \
     nano \
