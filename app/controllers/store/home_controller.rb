@@ -1,9 +1,9 @@
 module Store
   class HomeController < ApplicationController
-    require "faker"
-    require "ostruct"
+
     def index
       @products = Product.all
+      @carousel_items = Product.limit(5)
     end
   end
 end
