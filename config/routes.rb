@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   devise_for :users
 
+  root "store/home#index"
+
   namespace :store do
-    root "home#index"
   end
 end
