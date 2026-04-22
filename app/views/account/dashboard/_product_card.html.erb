@@ -1,0 +1,16 @@
+<a href="<%= product_path(product) %>" class="group flex flex-col overflow-hidden rounded-xl border border-stone-200 hover:border-violet-300 hover:shadow-lg">
+  <div class="overflow-hidden p-4">
+    <%= image_tag product.image, class: "aspect-square w-full rounded-lg object-cover transition group-hover:scale-105" %>
+  </div>
+  <div class="flex grow flex-col px-4 pt-2 pb-4">
+    <h4 class="mb-1 font-semibold text-stone-800"><%= product.name %></h4>
+    <p class="mb-3 text-xs text-stone-500">
+        <%= product.name %>
+    </p>
+    <div class="mt-auto flex items-center justify-between">
+      <span class="text-lg font-bold text-violet-700"><%= number_to_currency(product.price) %></span>
+      <span class="text-xs text-stone-500">
+        <%= product.name %> sold</span>
+    </div>
+  </div>
+</a>

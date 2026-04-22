@@ -1,0 +1,8 @@
+<section>
+  <h2 class="text-2xl font-bold">Best Sellers</h2>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-8 xl:grid-cols-4 mt-8">
+    <% @products.each do |product| %>
+      <%= render "account/dashboard/product_card", product: product %>
+    <% end %>
+  </div>
+</section>
