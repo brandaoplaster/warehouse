@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "store/home#index"
+  resources :products
 
-  namespace :store do
+  namespace :account do
+    root "dashboard#index"
   end
 end
