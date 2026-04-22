@@ -12,17 +12,16 @@ if Rails.env.development? || Rails.env.test?
 
       100.times do
         order = create(:order, user: users.sample)
-        
+
         products.sample(rand(2..5)).each do |product|
-          create(:order_item, 
-            order: order, 
+          create(:order_item,
+            order: order,
             product: product,
             quantity: rand(1..5),
             unit_price: product.price
           )
         end
       end
-      
     end
   end
 end
