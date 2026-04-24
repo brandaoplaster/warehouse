@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   namespace :account do
     root "dashboard#index"
   end
+
+  namespace :backoffice do
+    root "dashboard#index"
+  end
 end
