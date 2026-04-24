@@ -1,8 +1,7 @@
-module Account
+module Backoffice
   class ApplicationController < ::ApplicationController
     include Authenticable
-    require_role :client
 
-    layout "dashboard"
+    layout "backoffice"
   end
 end

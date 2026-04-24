@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
 
   validates :name, presence: true
+  enum :role, { admin: 0, customer: 1 }
 end

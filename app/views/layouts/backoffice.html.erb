@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Warehouse" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div id="page-container"
+      class="mx-auto flex min-h-screen w-full min-w-[320px] flex-col bg-stone-100 lg:ps-64">
+
+      <div data-controller="account--sidebar">
+        <%= render "shared/backoffice/mobile_header" %>
+        <%= render "shared/backoffice/sidebar" %>
+      </div>
+
+      <main id="page-content"
+        class="flex max-w-full flex-auto flex-col bg-white pt-20 lg:me-4 lg:mt-4 lg:rounded-xl lg:border lg:border-stone-200 lg:pt-0">
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>
