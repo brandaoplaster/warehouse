@@ -34,8 +34,13 @@
         </span>
       <% end %>
 
-      <%= link_to "Login", "#", class: "text-sm text-gray-600" %>
-      <%= link_to "Sign up", "#", class: "text-sm font-medium" %>
+      <% if user_signed_in? %>
+        <%= link_to "Dashboard", dashboard_path_for(current_user), class: "text-sm text-gray-600" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "text-sm" %>
+      <% else %>
+        <%= link_to "Login", user_session_path, class: "text-sm text-gray-600" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "text-sm font-medium" %>
+      <% end %>
 
       <button data-action="click->navbar#toggle" class="inline-flex items-center p-2 w-10 h-10 justify-center md:hidden">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
