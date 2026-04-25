@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :orders, dependent: :destroy
+  has_one :cart, dependent: :destroy
 
   validates :name, presence: true
   enum :role, { admin: 0, customer: 1 }

@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   has_many :order_items, dependent: :destroy
   has_many :orders, through: :order_items
+  has_many :cart_items, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
