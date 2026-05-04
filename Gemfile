@@ -15,7 +15,7 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 
 gem "tailwindcss-rails", "~> 3.0"
 
