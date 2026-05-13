@@ -7,6 +7,11 @@ Rails.application.routes.draw do
 
   root "store/home#index"
   resources :products
+  resource :card, only: [ :show ] do
+    post :add_item
+    delete :remove_item
+    patch :update_item
+  end
 
   namespace :account do
     root "dashboard#index"
