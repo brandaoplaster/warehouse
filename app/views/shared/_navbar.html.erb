@@ -25,14 +25,23 @@
         />
       </div>
 
-      <%= link_to "#", class: "relative flex items-center" do %>
-        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6h13"/>
-        </svg>
-        <span class="absolute -top-2 -right-2 text-xs bg-black text-white rounded-full px-1">
-          2
-        </span>
-      <% end %>
+      <div data-controller="carts--cart" class="relative">
+        <button data-action="click->carts--cart#toggle" class="relative">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6h13"/>
+          </svg>
+          <span class="absolute -top-2 -right-2 text-xs bg-black text-white rounded-full px-1">
+            <%= 2 %>
+          </span>
+        </button>
+
+        <div data-carts--cart-target="shopping_cart"
+        class="fixed top-0 right-0 h-screen w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+         <%= turbo_frame_tag "cart_items" do %>
+            <%= render "store/carts/items" %>
+          <% end %>
+        </div>
+      </div>
 
       <% if user_signed_in? %>
         <%= link_to "Dashboard", dashboard_path_for(current_user), class: "text-sm text-gray-600" %>
